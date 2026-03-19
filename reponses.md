@@ -21,3 +21,21 @@
 - `run` : C'est la commande ou les commandes à exécuter pour réaliser l'action de l'étape. C'est ce qui définit ce que l'étape va faire concrètement.
 
 3. Le mot-clé `with` est utilisé pour fournir des paramètres ou des options à une action spécifique. Dans ce cas, il est utilisé pour spécifier la version de Python à configurer dans l'étape "Setup python". En utilisant `with`, on peut passer des arguments à l'action `actions/setup-python@v3` pour personnaliser son comportement, comme la version de Python à installer.
+
+# Exercice 2 - Qualité du code
+
+## Questions
+
+1. Sur l’onglet Summary d’une analyse de code, SonarCloud fournit 4 indicateurs. Quels sont-ils et quelles sont leurs utilités ?
+2. À quoi sert l’indicateur Quality Gate ?
+
+## Réponses
+
+1. Les quatre indicateurs fournis par SonarCloud sur l'onglet Summary sont :
+
+- New Issues : Le nombre de nouvelles issues détectées dans le code depuis la dernière analyse. Cela permet de suivre l'évolution de la qualité du code au fil du temps.
+- Accepted Issues : Le nombre d'issues qui ont été acceptées ou ignorées par les développeurs. Cela peut indiquer que certaines issues ne sont pas considérées comme des problèmes par l'équipe.
+- Duplications : Le pourcentage de code dupliqué dans le projet. Un taux élevé de duplications peut indiquer un manque de réutilisation du code et une maintenance plus difficile.
+- Coverage : Le pourcentage de code couvert par les tests unitaires. Un taux de couverture élevé est généralement un indicateur de la qualité des tests et de la fiabilité du code.
+
+2. L'indicateur Quality Gate est un ensemble de critères définis pour évaluer la qualité du code. Il sert à déterminer si le code passe ou échoue en fonction de ces critères, tels que le nombre d'issues, le taux de duplications, la couverture des tests, etc. Si le code ne respecte pas les critères du Quality Gate, il est considéré comme ayant échoué, ce qui peut empêcher la fusion du code dans la branche principale ou déclencher des actions correctives. Le Quality Gate est un outil essentiel pour maintenir un niveau de qualité élevé dans le projet.
