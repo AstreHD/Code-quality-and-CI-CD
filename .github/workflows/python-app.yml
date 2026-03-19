@@ -56,4 +56,4 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: ghcr.io/${{ github.actor }}/tp2:latest
+          tags: ghcr.io/astrehd/tp2:latest # In lowercase because of this: ERROR: failed to build: invalid tag "ghcr.io/AstreHD/tp2:latest": repository name must be lowercase
