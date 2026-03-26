@@ -56,3 +56,25 @@
 
 2. Oui, il y a des Code Smells. La méthode `spend_money` dans la classe `Wallet` est la même que la méthode `spend_cash`. Il y a également des paramètres inutilisés.
 3. Oui, il y a des Security Hotspots. En utilisant une action dans une GitHub Action, il est préférable d'utiliser le hash complet du commit plutôt que la version ou la branche.
+
+# Exercice 3 - Gitlab CI/CD
+
+## Partie A
+
+### Questions
+
+1. Que fait le job pytest ?
+2. Que fait le job image-creation ?
+3. Que fait le job package-creation ?
+4. Dans quel ordre les différents jobs sont-ils exécutés et pourquoi ?
+5. Le stage 2 génère une image Docker. Où est-elle stockée et comment pouvez-vous la retrouver ?
+6. Le stage 3 génère un wheel Python. Où est-il stocké et comment pouvez-vous le retrouver ?
+
+### Réponses
+
+1. Le job pytest exécute les tests unitaires du projet en utilisant la commande `pytest`.
+2. Le job image-creation construit une image Docker à partir du Dockerfile présent dans le projet.
+3. Le job package-creation construit un package Python à partir du code source.
+4. Les jobs sont exécutés dans l'ordre suivant : pytest, image-creation, package-creation. Cet ordre est déterminé par les dépendances entre les jobs.
+5. Elle est stockée dans le registre de conteneurs de GitLab. Vous pouvez la retrouver en accédant à la section "Container Registry" du projet dans GitLab.
+6. Il est stocké dans le registre des paquets de GitLab. Vous pouvez le retrouver en accédant à la section "Packages & Registries" du projet dans GitLab, puis en sélectionnant "Package Registry".
