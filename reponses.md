@@ -24,12 +24,14 @@
 
 # Exercice 2 - Qualité du code
 
-## Questions
+## Partie A
+
+### Questions
 
 1. Sur l’onglet Summary d’une analyse de code, SonarCloud fournit 4 indicateurs. Quels sont-ils et quelles sont leurs utilités ?
 2. À quoi sert l’indicateur Quality Gate ?
 
-## Réponses
+### Réponses
 
 1. Les quatre indicateurs fournis par SonarCloud sur l'onglet Summary sont :
 
@@ -39,3 +41,18 @@
 - Coverage : Le pourcentage de code couvert par les tests unitaires. Un taux de couverture élevé est généralement un indicateur de la qualité des tests et de la fiabilité du code.
 
 2. L'indicateur Quality Gate est un ensemble de critères définis pour évaluer la qualité du code. Il sert à déterminer si le code passe ou échoue en fonction de ces critères, tels que le nombre d'issues, le taux de duplications, la couverture des tests, etc. Si le code ne respecte pas les critères du Quality Gate, il est considéré comme ayant échoué, ce qui peut empêcher la fusion du code dans la branche principale ou déclencher des actions correctives. Le Quality Gate est un outil essentiel pour maintenir un niveau de qualité élevé dans le projet.
+
+## Partie B
+
+### Questions
+
+1. Quelle est la différence entre les sections New code et Overall Code dans l’onglet Summary ?
+2. Y a-t-il des Code Smells ? Si oui, combien et pour quelle(s) raisons(s) ?
+3. Y a-t-il des Security Hotspots ? Si oui, combien et pour quelle(s) raison(s) ?
+
+### Réponses
+
+1. New Code est une section concernant les dernières modifications apportées tandis que Overall Code concerne l'ensemble du code du projet.
+
+2. Oui, il y a des Code Smells. La méthode `spend_money` dans la classe `Wallet` est la même que la méthode `spend_cash`. Il y a également des paramètres inutilisés.
+3. Oui, il y a des Security Hotspots. En utilisant une action dans une GitHub Action, il est préférable d'utiliser le hash complet du commit plutôt que la version ou la branche.
