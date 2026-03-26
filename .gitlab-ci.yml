@@ -55,9 +55,8 @@ wheel-testing:
   image: python:3.14
   script:
     - python --version
-    - pip install virtualenv
-    - virtualenv venv
-    - source venv/bin/activate
+    - python -m venv .venv
+    - source .venv/bin/activate
     - pip install --upgrade pip
     - pip install TP2 --index-url https://gitlab-ci-token:$CI_JOB_TOKEN@gitlab-etu.ing.he-arc.ch/api/v4/projects/6004/packages/pypi/simple
     - python -c "exec(\"from TP2.wallet import Wallet\nmy_wallet = Wallet(100)\nmy_wallet.add_cash(120)\nprint('Congratulations. You successfully installed the TP2 package')\")"
