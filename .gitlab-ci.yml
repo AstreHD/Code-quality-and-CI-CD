@@ -52,7 +52,7 @@ package-creation:
 
 wheel-testing:
   stage: test-package
-  image: python:3.10
+  image: python:3.14
   script:
     - python --version
     - pip install virtualenv

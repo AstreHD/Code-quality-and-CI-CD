@@ -78,3 +78,15 @@
 4. Les jobs sont exécutés dans l'ordre suivant : pytest, image-creation, package-creation. Cet ordre est déterminé par les dépendances entre les jobs.
 5. Elle est stockée dans le registre de conteneurs de GitLab. Vous pouvez la retrouver en accédant à la section "Container Registry" du projet dans GitLab.
 6. Il est stocké dans le registre des paquets de GitLab. Vous pouvez le retrouver en accédant à la section "Packages & Registries" du projet dans GitLab, puis en sélectionnant "Package Registry".
+
+## Partie C
+
+### Questions
+
+1. A quel moment de la pipeline ce job s’execute-t-il et pourquoi ?
+2. Que fait le job wheel-testing ?
+
+### Réponses
+
+1. Le job wheel-testing s'exécute après le job package-creation, car il dépend du package Python généré par ce dernier. Il est nécessaire que le package soit créé avant de pouvoir le tester.
+2. Le job wheel-testing installe le package Python généré par le job package-creation et exécute un test pour vérifier que le package fonctionne correctement.
